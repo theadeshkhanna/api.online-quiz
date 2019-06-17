@@ -1,7 +1,7 @@
 <?php
 
 $api = app('Dingo\Api\Routing\Router');
-$baseControllersPath = 'App\Api\v1\Controllers';
+$baseControllersPath = 'App\Api\v1\Controllers\\';
 
 /*
 |--------------------------------------------------------------------------

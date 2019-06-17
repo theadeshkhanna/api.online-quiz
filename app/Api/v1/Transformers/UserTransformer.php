@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Api\v1\Transfomers;
+namespace App\Api\v1\Transformers;
 
 use App\Api\v1\Transformers\Traits\UserDetailTrait;
 use App\User;
