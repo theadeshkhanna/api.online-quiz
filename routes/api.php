@@ -17,4 +17,8 @@ $baseControllersPath = 'App\Api\v1\Controllers\\';
 $api->version('v1', function(\Dingo\Api\Routing\Router $api) use ($baseControllersPath) {
 
     $api->post('register', $baseControllersPath . 'AuthController@register');
+
+    $api->post('login', $baseControllersPath . 'AuthController@login');
+
+    $api->post('logout', $baseControllersPath . 'AuthController@logout');
 });
