@@ -18,7 +18,14 @@ $api->version('v1', function(\Dingo\Api\Routing\Router $api) use ($baseControlle
 
     $api->post('register', $baseControllersPath . 'AuthController@register');
 
-    $api->post('login', $baseControllersPath . 'AuthController@login');
+    $api->get('login', $baseControllersPath . 'AuthController@login');
 
-    $api->post('logout', $baseControllersPath . 'AuthController@logout');
+    $api->get('logout', $baseControllersPath . 'AuthController@logout');
+});
+
+$api->version('v1',['middleware' => ['jwt.auth']],function(\Dingo\Api\Routing\Router $api) use ($baseControllersPath) {
+
+    $api->get('questions/random', $baseControllersPath . 'QuestionController@getRandom');
+
+    $api->get('questions/filtered', $baseControllersPath . 'QuestionController@getFiltered');
 });
