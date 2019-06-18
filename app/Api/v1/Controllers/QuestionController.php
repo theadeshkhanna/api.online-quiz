@@ -2,6 +2,7 @@
 
 namespace App\Api\v1\Controllers;
 
+use App\Api\v1\Requests\CreateFilteredQuestionRequest;
 use App\Services\QuestionService;
 
 class QuestionController extends BaseController {
@@ -15,5 +16,15 @@ class QuestionController extends BaseController {
         return [
             'test' => $this->questionService->getRandomQuestions()
         ];
+    }
+
+    public function fetchCategory() {
+        return [
+          'categories' => $this->questionService->getCategory()
+        ];
+    }
+
+    public function getFiltered(CreateFilteredQuestionRequest $request) {
+        $this->questionService->getFilteredQuestions($request);
     }
 }
