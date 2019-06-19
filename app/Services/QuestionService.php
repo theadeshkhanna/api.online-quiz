@@ -38,16 +38,18 @@ class QuestionService {
 
     }
 
-    public function getCategoryId($category) {
+    public function getCategoryId($categoryName) {
         $curl = new Curl();
         $url = 'https://opentdb.com/api_category.php';
         $curl->get($url);
 
         $categories = json_decode(json_encode(($curl->response)))->trivia_categories;
 
-        if($categories->name === $category) {
-            return $categories->id;
-        }
+        $arr = array_map(function($category){
+            return $category->name;
+        }, $categories);
+
+        return (9 + array_search($categoryName, $arr));
     }
 
     public function getFilteredQuestions(CreateFilteredQuestionContract $contract) {

@@ -25,6 +25,9 @@ class QuestionController extends BaseController {
     }
 
     public function getFiltered(CreateFilteredQuestionRequest $request) {
-        $this->questionService->getFilteredQuestions($request);
+        return [
+            'test' => $this->questionService->getFilteredQuestions($request)
+        ];
     }
+
 }
