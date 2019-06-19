@@ -3,30 +3,50 @@
 namespace App\Services;
 
 
-use App\Quiz;
+use App\CorrectAnswer;
+use App\IncorrectAnswers;
+use App\Question;
 use App\Services\Contracts\CreateFilteredQuestionContract;
+use App\Test;
 use Curl\Curl;
 
 class QuestionService {
 
     public function getRandomQuestions($id) {
-        $quiz = new Quiz();
+        $test = new Test();
+        $test->user_id = $id;
+        $test->save();
+
+        $question = new Question();
+        $correct = new CorrectAnswer();
+        $incorrect = new IncorrectAnswers();
+
         $curl = new Curl();
         $url = 'https://opentdb.com/api.php?amount=10';
         $curl->get($url);
 
         $results = json_decode(json_encode($curl->response))->results;
 
-         $arr = array_map(function($result) {
+        array_map(function($result) use ($question, $test){
+            $question->question =  $result->question;
+            $question->test_id = $test->id;
+        }, $results);
+
+        array_map(function($result) use ($correct, $test, $question){
+            $correct->answers =  $result->correct_answer;
+            }, $results);
+
+        array_map(function($result) use ($incorrect, $test, $question){
+            $incorrect->answers = $result->correct_answer;
+            }, $results);
+
+        return array_map(function($result) {
             return [
                 'question' => $result->question,
                 'correct_answer'  => $result->correct_answer,
                 'incorrect_answer' =>    $result->incorrect_answers
             ];
         }, $results);
-
-         $quiz->user_id = $id;
-        return $arr;
     }
 
     public function getCategory() {

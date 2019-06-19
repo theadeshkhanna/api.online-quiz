@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIncorrectAnsTable extends Migration
+class CreateCorrectAnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateIncorrectAnsTable extends Migration
      */
     public function up()
     {
-        Schema::create('incorrect_ans', function (Blueprint $table) { $table->bigIncrements('id');
-            $table->unsignedInteger('quiz_id');
+        Schema::create('correct_ans', function (Blueprint $table) {
+            $table->Increments('id');
+            $table->unsignedInteger('test_id');
             $table->unsignedInteger('question_id');
             $table->string('answers');
             $table->timestamps();
 
-            $table->foreign('quiz_id')->references('id')->on('quiz')->onDelete('cascade');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
             $table->foreign('question_id')->references('id')->on('questions')->onDelete('cascade');
         });
     }
@@ -31,6 +32,6 @@ class CreateIncorrectAnsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('incorrect_ans');
+        Schema::dropIfExists('correct_ans');
     }
 }

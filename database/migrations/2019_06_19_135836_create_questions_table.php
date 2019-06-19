@@ -14,12 +14,12 @@ class CreateQuestionsTable extends Migration
     public function up()
     {
         Schema::create('questions', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedInteger('quiz_id');
+            $table->Increments('id');
+            $table->unsignedInteger('test_id');
             $table->string('question');
             $table->timestamps();
 
-            $table->foreign('quiz_id')->references('id')->on('quiz')->onDelete('cascade');
+            $table->foreign('test_id')->references('id')->on('tests')->onDelete('cascade');
         });
     }
 

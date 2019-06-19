@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Quiz extends Model {
+class Test extends model {
 
     public function user() {
         return $this->belongsTo(User::class);
