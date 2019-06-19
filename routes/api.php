@@ -30,4 +30,6 @@ $api->version('v1',['middleware' => ['jwt.auth']],function(\Dingo\Api\Routing\Ro
     $api->get('questions/category', $baseControllersPath . 'QuestionController@fetchCategory');
 
     $api->get('questions/filtered', $baseControllersPath . 'QuestionController@getFiltered');
+
+    $api->post('points', $baseControllersPath . 'PointsController@totalPoints');
 });

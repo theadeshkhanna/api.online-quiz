@@ -4,6 +4,7 @@ namespace App\Api\v1\Controllers;
 
 use App\Api\v1\Requests\CreateFilteredQuestionRequest;
 use App\Services\QuestionService;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends BaseController {
     protected $questionService;
@@ -14,7 +15,7 @@ class QuestionController extends BaseController {
 
     public function getRandom() {
         return [
-            'test' => $this->questionService->getRandomQuestions()
+            'test' => $this->questionService->getRandomQuestions(Auth::id())
         ];
     }
 

@@ -3,25 +3,30 @@
 namespace App\Services;
 
 
+use App\Quiz;
 use App\Services\Contracts\CreateFilteredQuestionContract;
 use Curl\Curl;
 
 class QuestionService {
 
-    public function getRandomQuestions() {
+    public function getRandomQuestions($id) {
+        $quiz = new Quiz();
         $curl = new Curl();
         $url = 'https://opentdb.com/api.php?amount=10';
         $curl->get($url);
 
         $results = json_decode(json_encode($curl->response))->results;
 
-        return array_map(function($result) {
+         $arr = array_map(function($result) {
             return [
                 'question' => $result->question,
                 'correct_answer'  => $result->correct_answer,
                 'incorrect_answer' =>    $result->incorrect_answers
             ];
         }, $results);
+
+         $quiz->user_id = $id;
+        return $arr;
     }
 
     public function getCategory() {
@@ -38,7 +43,7 @@ class QuestionService {
 
     }
 
-    public function getCategoryId($categoryName) {
+    private function getCategoryId($categoryName) {
         $curl = new Curl();
         $url = 'https://opentdb.com/api_category.php';
         $curl->get($url);

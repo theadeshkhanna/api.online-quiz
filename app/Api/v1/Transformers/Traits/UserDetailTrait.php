@@ -10,7 +10,8 @@ trait UserDetailTrait {
             'name'  => $user->name,
             'email' => $user->email,
             'country' => $user->country,
-            'city'    => $user->city
+            'city'    => $user->city,
+            'points'  => (int)$user->points
         ];
     }
 }
