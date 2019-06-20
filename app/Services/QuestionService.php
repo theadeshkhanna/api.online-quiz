@@ -23,6 +23,7 @@ class QuestionService {
        array_map(function($result) use ($test){
             $question = new Question();
             $question->question =  $result->question;
+            $question->correct_answer = $result->correct_answer;
             $question->test_id = $test->id;
             $question->save();
         }, $results);

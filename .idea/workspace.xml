@@ -4,13 +4,8 @@
     <list default="true" id="5a43e836-f4be-4cfc-9425-ff56eed06a86" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Api/v1/Controllers/PointsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Api/v1/Controllers/PointsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/CorrectAnswer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/CorrectAnswer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/IncorrectAnswers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/IncorrectAnswers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Question.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Question.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/PointsService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/PointsService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Services/QuestionService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/QuestionService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_19_135847_create_correct_ans_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_19_135854_create_incorrect_ans_table.php" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,14 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Services/QuestionService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#33#50#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="1095">
+              <caret line="76" column="70" lean-forward="true" selection-start-line="76" selection-start-column="70" selection-end-line="76" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_135836_create_questions_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -62,8 +63,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Api/v1/Controllers/PointsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="300">
+              <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="e#42#83#0#PHP" expanded="true" />
               </folding>
@@ -71,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Services/PointsService.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+            <state relative-caret-position="570">
+              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
               <folding>
                 <element signature="e#32#49#0#PHP" expanded="true" />
               </folding>
@@ -129,7 +130,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_115913_create_incorrect_ans_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_104835_create_test_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135126_drop_test_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135836_create_questions_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135854_create_incorrect_ans_table.php" />
         <option value="$PROJECT_DIR$/app/Test.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135547_create_tests_table.php" />
@@ -139,7 +139,9 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135847_create_correct_ans_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_20_105620_create_correct_answers_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_06_20_105630_create_incorrect_answers_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_20_113502_add_correct_answer_column_to_questions_table.php" />
         <option value="$PROJECT_DIR$/app/Services/QuestionService.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_06_19_135836_create_questions_table.php" />
         <option value="$PROJECT_DIR$/app/Api/v1/Controllers/PointsController.php" />
         <option value="$PROJECT_DIR$/app/Services/PointsService.php" />
       </list>
@@ -289,6 +291,12 @@
             <path>
               <item name="online-quiz-portal" type="b2602c69:ProjectViewProjectNode" />
               <item name="online-quiz-portal" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="online-quiz-portal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="online-quiz-portal" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -351,18 +359,17 @@
       <workItem from="1561014947540" duration="19000" />
       <workItem from="1561018637291" duration="19000" />
       <workItem from="1561023295821" duration="40000" />
-      <workItem from="1561025737649" duration="4703000" />
+      <workItem from="1561025737649" duration="6800000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37100000" />
+    <option name="totallyTimeSpent" value="39197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2824765" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2824765" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -375,7 +382,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3282365" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18654434" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.18654434" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -620,13 +627,6 @@
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_115836_create_questions_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_115913_create_incorrect_ans_table.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_115850_create_correct_ans_table.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_135836_create_questions_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="30" lean-forward="true" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-06-20.log">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -652,16 +652,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Api/v1/Controllers/QuestionController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
-          <folding>
-            <element signature="e#42#96#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,16 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/QuestionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#33#50#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -724,10 +704,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_20_113502_add_correct_answer_column_to_questions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Api/v1/Controllers/QuestionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="76" selection-start-line="17" selection-start-column="76" selection-end-line="17" selection-end-column="76" />
+          <folding>
+            <element signature="e#42#96#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_06_19_135836_create_questions_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Api/v1/Controllers/PointsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+        <state relative-caret-position="300">
+          <caret line="20" column="1" lean-forward="true" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
           <folding>
             <element signature="e#42#83#0#PHP" expanded="true" />
           </folding>
@@ -736,11 +740,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Services/PointsService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="58" lean-forward="true" selection-start-line="12" selection-start-column="58" selection-end-line="12" selection-end-column="58" />
+        <state relative-caret-position="570">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding>
             <element signature="e#32#49#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Services/QuestionService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1095">
+          <caret line="76" column="70" lean-forward="true" selection-start-line="76" selection-start-column="70" selection-end-line="76" selection-end-column="70" />
         </state>
       </provider>
     </entry>
