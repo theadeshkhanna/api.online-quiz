@@ -9,7 +9,10 @@ use App\User;
 class PointsService {
 
     public function getTotalPoints(GetAnswerContract $contract, $id, $user) {
-        $correct_ans[] = Question::where('title_id', $id)->correct_answer;
+        $questions = Question::where('test_id', $id)->get();
+        $correct_ans = [];
+        $correct_ans = $questions->correct_answer;
+
         $point = 0;
         for($i=0;$i<10;$i++) {
             if($contract->getAnswerOne() == $correct_ans[$i]) {
