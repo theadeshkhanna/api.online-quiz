@@ -65,7 +65,11 @@ class QuestionService {
         return (9 + array_search($categoryName, $arr));
     }
 
-    public function getFilteredQuestions(CreateFilteredQuestionContract $contract) {
+    public function getFilteredQuestions(CreateFilteredQuestionContract $contract,$id) {
+        $test = new Test();
+        $test->user_id = $id;
+        $test->save();
+
         $curl = new Curl();
         $url = 'https://opentdb.com/api.php?amount=10';
 
@@ -85,6 +89,14 @@ class QuestionService {
         $curl->get($url);
 
         $results = json_decode(json_encode($curl->response))->results;
+
+        array_map(function($result) use ($test){
+            $question = new Question();
+            $question->question =  $result->question;
+            $question->correct_answer = $result->correct_answer;
+            $question->test_id = $test->id;
+            $question->save();
+        }, $results);
 
         return array_map(function($result) {
             return [

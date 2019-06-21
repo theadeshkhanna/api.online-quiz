@@ -27,7 +27,7 @@ class QuestionController extends BaseController {
 
     public function getFiltered(CreateFilteredQuestionRequest $request) {
         return [
-            'test' => $this->questionService->getFilteredQuestions($request)
+            'test' => $this->questionService->getFilteredQuestions($request, Auth::id())
         ];
     }
 
