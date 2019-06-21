@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Question;
 use App\Services\Contracts\CreateFilteredQuestionContract;
 use App\Test;
+use App\User;
 use Curl\Curl;
 
 class QuestionService {
@@ -13,6 +14,10 @@ class QuestionService {
         $test = new Test();
         $test->user_id = $id;
         $test->save();
+
+        $user = User::find($id);
+        ++$user->no_of_tests;
+        $user->save();
 
         $curl = new Curl();
         $url = 'https://opentdb.com/api.php?amount=10';
@@ -69,6 +74,10 @@ class QuestionService {
         $test = new Test();
         $test->user_id = $id;
         $test->save();
+
+        $user = User::find($id);
+        ++$user->no_of_tests;
+        $user->save();
 
         $curl = new Curl();
         $url = 'https://opentdb.com/api.php?amount=10';
