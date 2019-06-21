@@ -9,35 +9,50 @@ use App\User;
 class PointsService {
 
     public function getTotalPoints(GetAnswerContract $contract, $id, $user) {
-        $correct_ans = array(Question::where('test_id', $id)->get('correct_answer'));
+        $ans = Question::where('test_id', $id)->get('correct_answer');
+        $points = $user->points;
 
-        $point = 0;
-        for($i=1;$i<=10;$i++) {
-            if($contract->getAnswerOne() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerTwo() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerThree() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerFour() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerFive() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerSix() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerSeven() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerEight() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerNine() == $correct_ans[$i]) {
-                $point++;
-            }else if($contract->getAnswerTen() == $correct_ans[$i]) {
-                $point++;
-            }else {
-
-            }
+        if($ans[0]['correct_answer'] == $contract->getAnswerOne()) {
+            ++$points;
         }
-        $user->points = $point;
+
+        if($ans[1]['correct_answer'] == $contract->getAnswerTwo()) {
+            ++$points;
+        }
+
+        if($ans[2]['correct_answer'] == $contract->getAnswerThree()) {
+            ++$points;
+        }
+
+        if($ans[3]['correct_answer'] == $contract->getAnswerFour()) {
+            ++$points;
+        }
+
+        if($ans[4]['correct_answer'] == $contract->getAnswerFive()) {
+            ++$points;
+        }
+
+        if($ans[5]['correct_answer'] == $contract->getAnswerSix()) {
+            ++$points;
+        }
+
+        if($ans[6]['correct_answer'] == $contract->getAnswerSeven()) {
+            ++$points;
+        }
+
+        if($ans[7]['correct_answer'] == $contract->getAnswerEight()) {
+            ++$points;
+        }
+
+        if($ans[8]['correct_answer'] == $contract->getAnswerNine()) {
+            ++$points;
+        }
+
+        if($ans[9]['correct_answer'] == $contract->getAnswerTen()) {
+            ++$points;
+        }
+
+        $user->points = $points;
         $user->save();
 
         return $user;
