@@ -14,6 +14,7 @@ class UsersTableSeeder extends Seeder
         $user->password = Hash::make('12345');
         $user->country = 'India';
         $user->city = 'Noida';
+        $user->mobile_number = '+918090122748';
 
         $user->save();
     }

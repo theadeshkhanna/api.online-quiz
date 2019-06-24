@@ -11,7 +11,8 @@ trait UserDetailTrait {
             'email' => $user->email,
             'country' => $user->country,
             'city'    => $user->city,
-            'points'  => (int)$user->points
+            'points'  => (int)$user->points,
+            'mobile_number' => $user->mobile_number
         ];
     }
 }
