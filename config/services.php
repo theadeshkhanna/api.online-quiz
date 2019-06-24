@@ -34,6 +34,11 @@ return [
         'secret' => env('SPARKPOST_SECRET'),
     ],
 
+    'twillio' => [
+        'account_sid' => env('TWILIO_ACCOUNT_SID'),
+        'auth_token'  => env('TWILIO_ACCOUNT_AUTH_TOKEN')
+    ],
+
     'stripe' => [
         'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
