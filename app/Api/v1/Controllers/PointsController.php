@@ -15,10 +15,14 @@ class PointsController extends BaseController {
         $this->pointsService = new PointsService();
     }
 
-    public function totalPoints(GetAnswerRequest $request) {
+    public function submitAnswers(GetAnswerRequest $request) {
         $id = Test::orderBy('created_at', 'desc')->first()->id;
         $user = $this->pointsService->getTotalPoints($request, $id, Auth::user());
 
         return $this->response->item($user, new UserTransformer());
+    }
+
+    public function getStats() {
+        return $this->pointsService->getGameStats(Auth::user());
     }
 }

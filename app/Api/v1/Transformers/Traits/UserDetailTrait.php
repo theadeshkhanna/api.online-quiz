@@ -12,7 +12,7 @@ trait UserDetailTrait {
             'country' => $user->country,
             'city'    => $user->city,
             'points'  => (int)$user->points,
-            'mobile_number' => $user->mobile_number
+            'mobile_number' =>$user->mobile_number
         ];
     }
 }

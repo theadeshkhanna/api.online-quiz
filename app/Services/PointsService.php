@@ -57,4 +57,17 @@ class PointsService {
 
         return $user;
     }
+
+    public function getGameStats($user) {
+        $points = $user->points;
+        $tests = $user->no_of_tests;
+
+        $avg_points = $points/$tests;
+
+        return [
+          'points' => $points,
+          'tests' => $tests,
+          'avg points per game' => $avg_points
+        ];
+    }
 }
