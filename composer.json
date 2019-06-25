@@ -12,8 +12,12 @@
         "ext-json": "*",
         "dingo/api": "^2.1",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "~5.3|~6.0",
+        "kriswallsmith/buzz": "^1.0",
         "laravel/framework": "5.8.*",
         "laravel/tinker": "^1.0",
+        "mailgun/mailgun-php": "^2.8",
+        "nyholm/psr7": "^1.1",
         "php-curl-class/php-curl-class": "^8.5",
         "tymon/jwt-auth": "1.0.*"
     },
