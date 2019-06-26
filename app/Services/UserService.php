@@ -16,6 +16,7 @@ class UserService {
         $user->password = Hash::make($contract->getPassword());
         $user->country = $contract->getCountry();
         $user->city = $contract->getCity();
+        $user->mobile_number = $contract->getMob();
 
         $user->save();
         return $user;

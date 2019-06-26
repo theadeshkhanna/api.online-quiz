@@ -11,13 +11,15 @@ class CreateUserRequest extends Request implements CreateUserContract {
     const PASSWORD = 'password';
     const COUNTRY = 'country';
     const CITY = 'city';
+    const MOB = 'mobile_number';
 
     public function rules() {
         return [
           self::NAME   => 'required',
           self::EMAIL  => 'required|email',
           self::PASSWORD => 'required',
-          self::COUNTRY =>  'required'
+          self::COUNTRY =>  'required',
+          self::MOB     =>  'required'
         ];
     }
 
@@ -39,5 +41,9 @@ class CreateUserRequest extends Request implements CreateUserContract {
 
     public function getCity() {
         return $this->get(self::CITY);
+    }
+
+    public function getMob() {
+        return $this->get(self::MOB);
     }
 }

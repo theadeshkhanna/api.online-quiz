@@ -8,7 +8,9 @@ use App\Api\v1\Requests\Request;
 use App\Api\v1\Transformers\UserTransformer;
 use App\Services\UserService;
 use App\User;
+use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Hash;
+use Mailgun\Mailgun;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
@@ -22,6 +24,16 @@ class AuthController extends BaseController {
 
     public function register(CreateUserRequest $request) {
         $user = $this->userService->createUser($request);
+
+        $mgClient = new Mailgun(Config::get('services.mailgun.secret'));
+        $domain = Config::get('services.mailgun.domain');
+        $mgClient->sendMessage($domain,  array(
+            'from'	=> 'mailgun@' . $domain,
+            'to'	=> $user->email,
+            'subject' => 'Greetings',
+            'text'	=> 'Thank You '.$user->name.' for registering yourself on Quizzeria, world\'s best online quiz portal. Happy Quizzing :)'
+        ));
+
         return $this->response->item($user, new UserTransformer());
     }
 

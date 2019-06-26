@@ -9,4 +9,5 @@ interface  CreateUserContract {
     public function getPassword();
     public function getCountry();
     public function getCity();
+    public function getMob();
     }
