@@ -27,6 +27,8 @@ $api->version('v1', function(\Dingo\Api\Routing\Router $api) use ($baseControlle
 
 $api->version('v1',['middleware' => ['jwt.auth']],function(\Dingo\Api\Routing\Router $api) use ($baseControllersPath) {
 
+    $api->any('test', $baseControllersPath . 'TestController@testAuthenticated');
+
     $api->get('questions/random', $baseControllersPath . 'QuestionController@getRandom');
 
     $api->get('questions/category', $baseControllersPath . 'QuestionController@fetchCategory');
